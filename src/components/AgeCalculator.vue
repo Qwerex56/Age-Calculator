@@ -175,7 +175,7 @@ export default {
       const birthDate = new Date(this.dateStore.getYears, this.dateStore.getMonths - 1, this.dateStore.getDays);
       const today = new Date();
 
-      const age = new Date(today - birthDate);
+      const age = new Date(today.valueOf() - birthDate.valueOf());
       this.age = [
         { value: age.getFullYear() - 1970, msg: 'years', id: 0},
         { value: age.getMonth(), msg: 'months', id: 1},
