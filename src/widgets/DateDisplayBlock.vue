@@ -20,18 +20,22 @@ export default {
   display: flex;
 
   font-family: $poppins;
-  font-size: 3.5rem;
+  font-size: 1.75rem;
   font-style: italic;
   font-weight: 800;
+  line-height: 1.1;
 
   &__value {
-    margin-right: 0.5rem;
-
     color: $purple;
   }
 
   &__description {
+    text-indent: 0.5rem;
     color: $off-black;
+  }
+
+  @media screen and (min-width: 1440px) {
+    font-size: 3.5rem;
   }
 }
 </style>

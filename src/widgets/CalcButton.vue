@@ -1,6 +1,6 @@
 <template>
   <div class="calc-button">
-    <img class="calc-button__arrow" :src="arrow" alt="arr">
+    <img @click="$emit('calcAge')" class="calc-button__arrow" :src="arrow" alt="arr">
   </div>
 </template>
 
@@ -8,6 +8,7 @@
 import ArrowSVG from '@/assets/images/icon-arrow.svg';
 
 export default {
+  emits: ['calcAge'],
   data() {
     return {
       arrow: ArrowSVG,
@@ -24,7 +25,8 @@ export default {
   box-sizing: border-box;
   position: relative;
 
-  transition: 0.1s;
+  transition: 0.3s;
+
   &__arrow {
     width: 4rem;
     padding: 1.25rem;
@@ -34,6 +36,8 @@ export default {
     background-color: $purple;
 
     transition: 0.2s;
+
+    z-index: 1;
 
     &:hover {
       background-color: $off-black;
@@ -48,8 +52,16 @@ export default {
     width: 100%;
 
     border-bottom: .0625rem solid $light-gray;
-    
-    z-index: -1;
+  }
+
+  @media screen and (min-width: 1440px) {
+    justify-content: end;
+
+    &__arrow {
+      width: 6rem;
+
+      padding: 1.625rem;
+    }
   }
 }
 </style>
